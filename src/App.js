@@ -11,16 +11,15 @@ function App() {
   const location = useLocation();
 
   return (
-    
     <AuthProvider>
-      <>
+      <div className={location.pathname === '/login' ? '' : 'flex'}>
         {location.pathname !== '/login' && <Navbar />}
         <Routes>
           <Route path='login' element={< Login />}/>
           <Route path='dashboard' element={ <RequireAuth>< EmployeeList /></RequireAuth> }/>
           <Route path='*' element={ <RequireAuth> <NoMatch/> </RequireAuth> }/>
         </Routes>
-      </>
+      </div>
     </AuthProvider>
   );
 }

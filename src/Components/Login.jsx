@@ -57,7 +57,9 @@ export const Login = () => {
                             type="username" 
                             placeholder='your username' 
                             id='username' 
-                            name='username'/>
+                            name='username'
+                            required
+                        />
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
@@ -68,7 +70,9 @@ export const Login = () => {
                             type="password" 
                             placeholder='*******' 
                             id='password' 
-                            name='password'/> 
+                            name='password'
+                            required
+                        /> 
                     </div>
                     <div className="flex justify-center items-center mt-6">
                         <button

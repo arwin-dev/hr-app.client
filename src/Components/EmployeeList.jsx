@@ -25,32 +25,32 @@ function EmployeeList() {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="flex items-center justify-center h-screen">Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div className="flex items-center justify-center h-screen">Error: {error.message}</div>;
   }
 
   return (
-    <div>
-      <h1>Employee List</h1>
-      <table>
+    <div className="w-fit container mx-auto p-6">
+      <h1 className="text-2xl font-bold mb-4">Employee List</h1>
+      <table className="table-auto w-full">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Salary</th>
-            <th>Department</th>
+            <th className="px-4 py-2">ID</th>
+            <th className="px-4 py-2">Name</th>
+            <th className="px-4 py-2">Email</th>
+            <th className="px-4 py-2">Phone number</th>
           </tr>
         </thead>
         <tbody>
           {employees.map(employee => (
             <tr key={employee.Employee_ID}>
-              <td>{employee.First_name}</td>
-              <td>{employee.Last_name}</td>
-              <td>{employee.Email}</td>
-              <td>{employee.Phone_number}</td>
+              <td className="border px-4 py-2">{employee.Employee_ID}</td>
+              <td className="border px-4 py-2">{`${employee.First_name} ${employee.Last_name}`}</td>
+              <td className="border px-4 py-2">{employee.Email}</td>
+              <td className="border px-4 py-2">{employee.Phone_number}</td>
             </tr>
           ))}
         </tbody>
