@@ -4,11 +4,14 @@ import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav>
-        <NavLink to ='/dashboard'>Dashboard</NavLink>
-        <NavLink to =''>Home</NavLink>
+    <nav className="flex justify-between">
+      <div>
+        <NavLink to='/dashboard'>Dashboard</NavLink>
+      </div>
+      <div>
+        <NavLink to=''>Home</NavLink>
+      </div>
     </nav>
-
   )
 }
 

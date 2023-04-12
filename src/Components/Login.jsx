@@ -42,13 +42,44 @@ export const Login = () => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            
-            <label htmlFor="Username">Username</label>
-            <input value={username} onChange={(e) => setUsername(e.target.value)} type="username" placeholder='your username' id='username' name='username'/>
-            <label htmlFor="password">Password</label>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='*******' id='password' name='password'/>
-            <button type='submit'>Log In</button>
-        </form>
-    )
+        <div className='h-screen flex bg-gray-bg1'>
+            <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
+                <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
+                    Log in to your account 🔐
+                </h1>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="Username">Username</label>
+                        <input 
+                            value={username} 
+                            className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
+                            onChange={(e) => setUsername(e.target.value)} 
+                            type="username" 
+                            placeholder='your username' 
+                            id='username' 
+                            name='username'/>
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password</label>
+                        <input 
+                            value={password} 
+                            className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
+                            onChange={(e) => setPassword(e.target.value)} 
+                            type="password" 
+                            placeholder='*******' 
+                            id='password' 
+                            name='password'/> 
+                    </div>
+                    <div className="flex justify-center items-center mt-6">
+                        <button
+                            onSubmit={handleSubmit} 
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Log In
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    );
 }
+
