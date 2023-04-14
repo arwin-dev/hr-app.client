@@ -15,12 +15,11 @@ export const Login = () => {
         username: username,
         password: password
         };
-        const url = 'https://localhost:7129/login';
+        const url = process.env.REACT_APP_API+'login';
         axios.post(url, data)
         .then((response) => {
             if (response.status === 200) 
             {
-                alert('LOGIN SUCCESS');
                 auth.login(username,response.data)
                 navigate('/dashboard')
             } else 
@@ -42,8 +41,8 @@ export const Login = () => {
 
 
     return (
-        <div className='h-screen flex bg-gray-bg1'>
-            <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16'>
+        <div className='h-screen flex bg-slate-900'>
+            <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primary Border shadow-default py-10 px-16'>
                 <h1 className='text-2xl font-medium text-primary mt-4 mb-12 text-center'>
                     Log in to your account 🔐
                 </h1>

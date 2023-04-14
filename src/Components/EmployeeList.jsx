@@ -6,7 +6,8 @@ function EmployeeList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://localhost:7129/api/Employee')
+    const url = process.env.REACT_APP_API+'employee';
+    fetch(url)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -35,7 +36,7 @@ function EmployeeList() {
   return (
     <div className="w-fit container mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Employee List</h1>
-      <table className="table-auto w-full">
+      <table className="table-auto w-full ">
         <thead>
           <tr>
             <th className="px-4 py-2">ID</th>

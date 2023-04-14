@@ -1,8 +1,16 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useAuth } from './Auth/auth'
 
 
-const Navbar = () => {
+export const Navbar = () => {
+    const navigate = useNavigate();
+    const auth = useAuth();
+    const handleLogout = () => {
+        auth.logout()
+        navigate('login')
+    }
+
     return (
         <>
             <div className='navbar-play-container max-w-[180px]'>
@@ -13,19 +21,33 @@ const Navbar = () => {
                     <nav className="pt-6 menu">
                         <NavLink
                             to={'/dashboard'}
-                            className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md mt-2 menu-items`}>
+                            className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900  mt-2 menu-items`}>
                             <span className={` origin-left duration-200`}>
                                 Dashboard
                             </span>
                         </NavLink>
 
                         <NavLink
-                            to=''
-                            className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900 rounded-md mt-2 menu-items`} >
+                            to='/training'
+                            className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900  mt-2 menu-items`} >
                             <span className={` origin-left duration-200`}>
-                                Ideas
+                                Training
                             </span> 
                         </NavLink>
+
+                        <NavLink
+                            to='/training'
+                            className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900  mt-2 menu-items`} >
+                            <span className={` origin-left duration-200`}>
+                                About
+                            </span> 
+                        </NavLink>
+
+                        <div className='flex  rounded-md p-2 cursor-pointer font-bold hover:bg-light-white text-[#dc2626] text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900  mt-2 menu-items'>
+                            <button onClick={handleLogout} >
+                                Logout
+                            </button>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -33,15 +55,3 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
-
-
-
-{/* <nav className="flex justify-between">
-<div>
-  <NavLink to='/dashboard'>Dashboard</NavLink>
-</div>
-<div>
-  <NavLink to=''>Home</NavLink>
-</div>
-</nav> */}

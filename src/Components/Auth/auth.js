@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
   const login = (user, empID) => {
     setUser(user);
     setEmpID(empID);
-    console.log(user);
   };
 
   const logout = () => {
