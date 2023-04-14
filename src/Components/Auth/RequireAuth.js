@@ -5,7 +5,6 @@ import { useAuth } from './auth'
 const RequireAuth = ({children}) => {
 
     const auth = useAuth()
-    console.log(auth.user)
     if(!auth.user)
     {
         return <Navigate to='/login'/>

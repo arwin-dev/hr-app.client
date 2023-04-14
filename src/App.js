@@ -6,6 +6,7 @@ import { AuthProvider } from './Components/Auth/auth';
 import RequireAuth from './Components/Auth/RequireAuth';
 import {Navbar} from './Components/Navbar';
 import { Training } from './Components/Training/Training';
+import AddTraining from './Components/Training/AddTraining';
 import NoMatch from './Components/NoMatch';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='dashboard' element={ <RequireAuth>< EmployeeList /></RequireAuth> }/>
           <Route path='training' element={<RequireAuth> <Training/> </RequireAuth>} />
           <Route path='*' element={ <RequireAuth> <NoMatch/> </RequireAuth> }/>
+          <Route path='training/addtraining' element={ <RequireAuth> <AddTraining/> </RequireAuth> }/>
         </Routes>
       </div>
     </AuthProvider>
