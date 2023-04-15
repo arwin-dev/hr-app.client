@@ -6,9 +6,11 @@ import { AuthProvider } from './Components/Auth/auth';
 import RequireAuth from './Components/Auth/RequireAuth';
 import {Navbar} from './Components/Navbar';
 import { Training } from './Components/Training/Training';
-import { About } from './Components/About';
+import { About } from './Components/About/About';
 import AddTraining from './Components/Training/AddTraining';
 import NoMatch from './Components/NoMatch';
+import { Leaves } from './Components/Leave/Leaves';
+import { RequestLeave } from './Components/Leave/RequestLeave';
 
 function App() {
   const location = useLocation();
@@ -24,6 +26,9 @@ function App() {
 
           <Route path='training' element={<RequireAuth> <Training/> </RequireAuth>} />
           <Route path='training/addtraining' element={ <RequireAuth> <AddTraining/> </RequireAuth> }/>
+
+          <Route path='leaves' element={<RequireAuth> <Leaves/> </RequireAuth>}/>
+          <Route path='leaves/requestleave' element={<RequireAuth> <RequestLeave/> </RequireAuth>}/>
 
           <Route path='about' element={<RequireAuth> <About/> </RequireAuth>}/>
 

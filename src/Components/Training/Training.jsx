@@ -48,10 +48,10 @@ export const Training = () => {
     }
 
     return (
-        <div className='w-full h-screen'>
-        <div className='h-[40px] flex justify-between items-center bg-[#a8a29e] pb-1 px-4'>
-            <h1 className='text-2xl text-[#172554] font-bold '>Training</h1>
-            <button onClick={addTraining} className='' > Add Training </button>
+        <div className='bg-white rounded-lg shadow-md w-full'>
+        <div className='flex items-center justify-between bg-gray-200 px-4 py-3 rounded-t-lg'>
+            <h1 className='text-xl font-bold text-gray-800'>Training</h1>
+            <button onClick={addTraining} className='text-red-800 hover:text-red-500 mr-3' > Add Training </button>
         </div>
         <div className='w-fit container mx-auto p-6'>
             <table className="table-auto w-full border-solid border-2 ">

@@ -36,6 +36,14 @@ export const Navbar = () => {
                         </NavLink>
 
                         <NavLink
+                            to='/leaves'
+                            className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900  mt-2 menu-items`} >
+                            <span className={` origin-left duration-200`}>
+                                Leaves
+                            </span> 
+                        </NavLink>
+
+                        <NavLink
                             to='/about'
                             className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900  mt-2 menu-items`} >
                             <span className={` origin-left duration-200`}>
@@ -44,7 +52,7 @@ export const Navbar = () => {
                         </NavLink>
 
                         <div className='flex  rounded-md p-2 cursor-pointer font-bold hover:bg-light-white text-[#dc2626] text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900  mt-2 menu-items'>
-                            <button onClick={handleLogout} >
+                            <button className='w-full flex ' onClick={handleLogout} >
                                 Logout
                             </button>
                         </div>
