@@ -6,6 +6,7 @@ import { AuthProvider } from './Components/Auth/auth';
 import RequireAuth from './Components/Auth/RequireAuth';
 import {Navbar} from './Components/Navbar';
 import { Training } from './Components/Training/Training';
+import { About } from './Components/About';
 import AddTraining from './Components/Training/AddTraining';
 import NoMatch from './Components/NoMatch';
 
@@ -18,10 +19,15 @@ function App() {
         {location.pathname !== '/login' && <Navbar />}
         <Routes>
           <Route path='login' element={< Login />}/>
+
           <Route path='dashboard' element={ <RequireAuth>< EmployeeList /></RequireAuth> }/>
+
           <Route path='training' element={<RequireAuth> <Training/> </RequireAuth>} />
-          <Route path='*' element={ <RequireAuth> <NoMatch/> </RequireAuth> }/>
           <Route path='training/addtraining' element={ <RequireAuth> <AddTraining/> </RequireAuth> }/>
+
+          <Route path='about' element={<RequireAuth> <About/> </RequireAuth>}/>
+
+          <Route path='*' element={ <RequireAuth> <NoMatch/> </RequireAuth> }/>
         </Routes>
       </div>
     </AuthProvider>

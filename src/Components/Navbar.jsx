@@ -36,7 +36,7 @@ export const Navbar = () => {
                         </NavLink>
 
                         <NavLink
-                            to='/training'
+                            to='/about'
                             className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 hover:bg-gray-50 hover:text-slate-900  mt-2 menu-items`} >
                             <span className={` origin-left duration-200`}>
                                 About

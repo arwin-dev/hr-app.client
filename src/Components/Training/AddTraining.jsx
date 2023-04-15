@@ -26,6 +26,7 @@ const AddTraining = () => {
         event.preventDefault();
 
         try {
+
         const training = {
             Start_date: startDate,
             Completion_date: completionDate,
@@ -38,7 +39,8 @@ const AddTraining = () => {
         console.log('Training added successfully!', response.data);
         navigate('/training');
         } catch (error) {
-        console.error('Error adding training:', error);
+            alert('Error Adding Training');
+            console.error('Error adding training:', error);
         }
     };
 
@@ -63,6 +65,7 @@ const AddTraining = () => {
                         type="date"
                         value={startDate}
                         onChange={(e) => setStartDate(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="mb-4">
@@ -87,6 +90,7 @@ const AddTraining = () => {
                         id="training-id"
                         value={trainingId}
                         onChange={(e) => setTrainingId(e.target.value)}
+                        required
                         >   
                         <option value="">Select Training ID</option>
                         {trainingOptions.map(option => (
