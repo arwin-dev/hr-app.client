@@ -61,7 +61,6 @@ export const Training = () => {
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Mode</th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Start Date</th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Completion Date</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Score</th>
                 </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
@@ -71,7 +70,6 @@ export const Training = () => {
                     <td className="border px-4 py-2">{training.Mode}</td>
                     <td className="border px-4 py-2">{formatDate(training.Start_date)}</td>
                     <td className="border px-4 py-2">{formatDate(training.Completion_date)}</td>
-                    <td className="border px-4 py-2">{training.Score}</td>
                     </tr>
                 ))}
                 </tbody>

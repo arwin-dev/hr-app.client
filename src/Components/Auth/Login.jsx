@@ -9,6 +9,24 @@ export const Login = () => {
     const auth = useAuth();
     const navigate = useNavigate();
 
+    const isManager = (empID) => {
+        axios.get(process.env.REACT_APP_API + 'employee/managercheck', {
+          params: { empID: empID }
+        })
+          .then(response => {
+            let status = response.data[0].result
+            if(status === 1)
+            {
+                auth.managerAuth();
+            }
+            //console.log(response.data[0].result);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      };
+      
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = {
@@ -20,8 +38,9 @@ export const Login = () => {
         .then((response) => {
             if (response.status === 200) 
             {
-                auth.login(username,response.data)
-                //navigate('/dashboard')
+                auth.login(username,response.data);
+                isManager(response.data);
+                navigate('/dashboard')
             } else 
             {
                 alert(response.data);

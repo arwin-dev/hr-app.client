@@ -34,9 +34,9 @@ const AddTraining = () => {
             Training_ID: trainingId
         };
 
-        const response = await axios.post(process.env.REACT_APP_API+'training/add', training);
+        await axios.post(process.env.REACT_APP_API+'training/add', training);
 
-        console.log('Training added successfully!', response.data);
+        //alert('Training added successfully');
         navigate('/training');
         } catch (error) {
             alert('Error Adding Training');
@@ -76,6 +76,7 @@ const AddTraining = () => {
         value={completionDate}
         onChange={(e) => setCompletionDate(e.target.value)}
         className="border border-gray-400 rounded-lg px-3 py-2 w-full text-gray-800"
+        required
       />
     </div>
     <div className="mb-4">

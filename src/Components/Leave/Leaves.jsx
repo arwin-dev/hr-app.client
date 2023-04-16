@@ -41,13 +41,12 @@ export const Leaves = () => {
 
     const addLeaves = async (e) => {
         if (totalDays < pto) {
-            navigate('requestleave', { state: { totalDays, pto } });
+            navigate('requesttimeoff', { state: { totalDays, pto } });
         } else {
             setShowPopup(true);
         }
     }
     
-
     return (
         <div className='bg-white rounded-lg shadow-md w-full'>
             {showPopup &&
@@ -61,8 +60,8 @@ export const Leaves = () => {
                 </div>
             }
         <div className='flex items-center justify-between bg-gray-200 px-4 py-3 rounded-t-lg'>
-            <h1 className='text-xl font-bold text-gray-800'>Leaves</h1>
-            <button onClick={addLeaves} className='text-red-800 hover:text-red-500 mr-3' > Request Leave </button>
+            <h1 className='text-xl font-bold text-gray-800'>Time Off</h1>
+            <button onClick={addLeaves} className='text-red-800 hover:text-red-500 mr-3' >Request Time Off </button>
         </div>
         <div className='w-fit container mx-auto p-6'>
             <table className="table-auto w-full border-solid border-2 ">
@@ -75,7 +74,7 @@ export const Leaves = () => {
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                 {leaves.map(leave => (
-                    <tr key={leave.Name}>
+                    <tr key={leave.Leave_ID}>
                     <td className="border px-4 py-2">{leave.Leave_ID}</td>
                     <td className="border px-4 py-2">{leave.Number_of_days}</td>
                     <td className="border px-4 py-2">{leave.Reason}</td>
@@ -83,8 +82,8 @@ export const Leaves = () => {
                 ))}
                 </tbody>
             </table>
-            <h1 className='pt-4 text-md'>Total Leaves: {totalDays}</h1>
-            <h1 className='text-md'>Leaves available: {pto - totalDays}</h1>
+            <h1 className='pt-4 text-md'>Total Time Off: {totalDays}</h1>
+            <h1 className='text-md'>Time Off available: {pto - totalDays}</h1>
         </div>
         </div>
     )
