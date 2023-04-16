@@ -21,7 +21,7 @@ export const Login = () => {
             if (response.status === 200) 
             {
                 auth.login(username,response.data)
-                navigate('/dashboard')
+                //navigate('/dashboard')
             } else 
             {
                 alert(response.data);
@@ -36,10 +36,9 @@ export const Login = () => {
             {
                 alert('Error logging in');
             }
-        });
+        });       
     }
-
-
+ 
     return (
         <div className='h-screen flex bg-slate-900'>
             <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primary Border shadow-default py-10 px-16'>
