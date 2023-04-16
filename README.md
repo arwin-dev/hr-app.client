@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# React App with ASP.NET Web API Backend
+This is a sample React application that interacts with an ASP.NET Web API backend. The app provides authentication and authorization features, allows users to manage their time off, view their training schedule, and get information about the company and team. The following are the steps to get started with the application.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Requirements
+* Node.js and NPM installed
+* .NET Framework and Visual Studio installed
+## Installation
+1. Clone the repository or download the zip file.
+2. Open the project in Visual Studio.
+3. Run the API project to ensure the server is running.
+4. Open a new terminal window and navigate to the client folder.
+5. Run npm install to install all the dependencies.
+6. Run npm start to start the React application.
+## Configuration
+The application uses a .env file to store environment variables. Before running the application, make sure to update the following variables:
 
-## Available Scripts
+* __REACT_APP_API_URL__: The URL of the Web API backend.
 
-In the project directory, you can run:
+## Usage
+Once the application is running, you can access the following pages:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* `/login`: The login page.
+* `/dashboard`: The dashboard page, which displays the user's time off requests and training schedule.
+* `/team`: The team page, which displays information about the company's team members.
+* `/training`: The training page, which displays the user's training schedule.
+* `/training/addtraining`: The add training page, which allows the user to add a new training session to their schedule.
+* `/timeoff`: The time off page, which displays the user's time off requests.
+* `/timeoff/requesttimeoff`: The request time off page, which allows the user to request time off.
+* `/about`: The about page, which displays information about the company.
+* `/*`: The 404 page.
