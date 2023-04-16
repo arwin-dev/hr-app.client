@@ -9,6 +9,24 @@ export const Login = () => {
     const auth = useAuth();
     const navigate = useNavigate();
 
+    const isManager = (empID) => {
+        axios.get(process.env.REACT_APP_API + 'employee/managercheck', {
+          params: { empID: empID }
+        })
+          .then(response => {
+            let status = response.data[0].result
+            if(status === 1)
+            {
+                auth.managerAuth();
+            }
+            //console.log(response.data[0].result);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      };
+      
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = {
@@ -20,7 +38,8 @@ export const Login = () => {
         .then((response) => {
             if (response.status === 200) 
             {
-                auth.login(username,response.data)
+                auth.login(username,response.data);
+                isManager(response.data);
                 navigate('/dashboard')
             } else 
             {
@@ -36,10 +55,9 @@ export const Login = () => {
             {
                 alert('Error logging in');
             }
-        });
+        });       
     }
-
-
+ 
     return (
         <div className='h-screen flex bg-slate-900'>
             <div className='w-full max-w-md m-auto bg-white rounded-lg border border-primary Border shadow-default py-10 px-16'>

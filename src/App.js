@@ -1,16 +1,17 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import {Login} from './Components/Auth/Login';
-import EmployeeList from './Components/EmployeeList'
 import { AuthProvider } from './Components/Auth/auth';
 import RequireAuth from './Components/Auth/RequireAuth';
 import {Navbar} from './Components/Navbar';
 import { Training } from './Components/Training/Training';
 import { About } from './Components/About/About';
+import {Team} from './Components/Team';
 import AddTraining from './Components/Training/AddTraining';
 import NoMatch from './Components/NoMatch';
 import { Leaves } from './Components/Leave/Leaves';
 import { RequestLeave } from './Components/Leave/RequestLeave';
+import { Dashboard } from './Components/Dashboard';
 
 function App() {
   const location = useLocation();
@@ -22,13 +23,15 @@ function App() {
         <Routes>
           <Route path='login' element={< Login />}/>
 
-          <Route path='dashboard' element={ <RequireAuth>< EmployeeList /></RequireAuth> }/>
+          <Route path='dashboard' element={ <RequireAuth> <Dashboard/> </RequireAuth> }/>
+
+          <Route path='team' element={<RequireAuth> <Team/> </RequireAuth>} />
 
           <Route path='training' element={<RequireAuth> <Training/> </RequireAuth>} />
           <Route path='training/addtraining' element={ <RequireAuth> <AddTraining/> </RequireAuth> }/>
 
-          <Route path='leaves' element={<RequireAuth> <Leaves/> </RequireAuth>}/>
-          <Route path='leaves/requestleave' element={<RequireAuth> <RequestLeave/> </RequireAuth>}/>
+          <Route path='timeoff' element={<RequireAuth> <Leaves/> </RequireAuth>}/>
+          <Route path='timeoff/requesttimeoff' element={<RequireAuth> <RequestLeave/> </RequireAuth>}/>
 
           <Route path='about' element={<RequireAuth> <About/> </RequireAuth>}/>
 

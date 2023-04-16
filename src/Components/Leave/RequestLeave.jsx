@@ -13,6 +13,10 @@ export const RequestLeave = () => {
     const auth = useAuth();
     const navigate = useNavigate();
 
+    const handleCancel = (event) => {
+        navigate('/timeoff');
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try 
@@ -33,7 +37,7 @@ export const RequestLeave = () => {
             const response = await axios.post(process.env.REACT_APP_API+'leaves/addleaves', leave)
 
             console.log('Training added successfully!', response.data);
-            navigate('/leaves');
+            navigate('/timeoff');
         } catch (error) {
             alert('Error adding training');
             console.error('Error adding training:', error);
@@ -75,7 +79,10 @@ export const RequestLeave = () => {
                         ></textarea>
                     </div>
                     <div className="flex justify-end">
-                        <button className="bg-gray-500 text-white px-4 py-2 mr-2 rounded hover:bg-gray-600">
+                        <button 
+                        type='button'
+                            onClick={handleCancel}
+                            className="bg-gray-500 text-white px-4 py-2 mr-2 rounded hover:bg-gray-600">
                             Cancel
                         </button>
                         <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
