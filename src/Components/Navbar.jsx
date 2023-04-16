@@ -18,6 +18,9 @@ export const Navbar = () => {
                     <div className='flex gap-x-4 items-center'>
                         <h1 className={`text-white origin-left font-medium text-xl duration-300`}>HR-APP</h1>
                     </div>
+                    <div className='flex gap-x-4 items-center pt-4'>
+                        <h1 className={`text-white origin-left text-sm duration-300`}>Welcome, {auth.user}</h1>
+                    </div>
                     <nav className="pt-6 menu">
                         <NavLink
                             to={'/dashboard'}

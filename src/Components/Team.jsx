@@ -36,7 +36,7 @@ export function Team() {
   return (
     <div className="bg-white rounded-lg shadow-md w-full">
       <div className='flex items-center justify-between bg-gray-200 px-4 py-3 rounded-t-lg'>
-        <h1 className='text-xl font-bold text-gray-800'>About</h1>
+        <h1 className='text-xl font-bold text-gray-800'>Team</h1>
       </div>
       <div className='m-5'>
         <div className='grid grid-cols-3 gap-6 mx-auto px-3'>
