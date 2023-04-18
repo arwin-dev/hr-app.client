@@ -49,32 +49,32 @@ export const Training = () => {
 
     return (
         <div className='bg-white rounded-lg shadow-md w-full'>
-        <div className='flex items-center justify-between bg-gray-200 px-4 py-3 rounded-t-lg'>
-            <h1 className='text-xl font-bold text-gray-800'>Training</h1>
-            <button onClick={addTraining} className='text-red-800 hover:text-red-500 mr-3' > Add Training </button>
-        </div>
-        <div className='w-[90%] mx-auto overflow-x-auto'>
-            <table className="w-full whitespace-no-wrap bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-                <thead className="text-white">
-                    <tr className="bg-gray-700 uppercase text-sm leading-normal">
-                        <th className="py-3 px-4 text-left">Name</th>
-                        <th className="py-3 px-4 text-left">Mode</th>
-                        <th className="py-3 px-4 text-left">Start Date</th>
-                        <th className="py-3 px-4 text-left">Completion Date</th>
-                    </tr>
-                </thead>
-                <tbody className="text-gray-700 text-sm">
-                    {trainings.map(training => (
-                        <tr key={training.Name}>
-                            <td className="py-3 px-4 border-b border-gray-200">{training.Name}</td>
-                            <td className="py-3 px-4 border-b border-gray-200">{training.Mode}</td>
-                            <td className="py-3 px-4 border-b border-gray-200">{formatDate(training.Start_date)}</td>
-                            <td className="py-3 px-4 border-b border-gray-200">{formatDate(training.Completion_date)}</td>
+            <div className='flex items-center justify-between bg-gray-200 px-4 py-3 rounded-t-lg'>
+                <h1 className='text-xl font-bold text-gray-800'>Training</h1>
+                <button onClick={addTraining} className='text-red-800 hover:text-red-500 mr-3' > Add Training </button>
+            </div>
+            <div className='w-[90%] mx-auto overflow-x-auto'>
+                <table className="w-full whitespace-no-wrap bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                    <thead className="text-white">
+                        <tr className="bg-gray-700 uppercase text-sm leading-normal">
+                            <th className="py-3 px-4 text-left">Name</th>
+                            <th className="py-3 px-4 text-left">Mode</th>
+                            <th className="py-3 px-4 text-left">Start Date</th>
+                            <th className="py-3 px-4 text-left">Completion Date</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody className="text-gray-700 text-sm">
+                        {trainings.map(training => (
+                            <tr key={training.Name}>
+                                <td className="py-3 px-4 border-b border-gray-200">{training.Name}</td>
+                                <td className="py-3 px-4 border-b border-gray-200">{training.Mode}</td>
+                                <td className="py-3 px-4 border-b border-gray-200">{formatDate(training.Start_date)}</td>
+                                <td className="py-3 px-4 border-b border-gray-200">{formatDate(training.Completion_date)}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

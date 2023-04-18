@@ -63,21 +63,21 @@ export const Leaves = () => {
             <h1 className='text-xl font-bold text-gray-800'>Time Off</h1>
             <button onClick={addLeaves} className='text-red-800 hover:text-red-500 mr-3' >Request Time Off </button>
         </div>
-        <div className='w-fit container mx-auto p-6'>
-            <table className="table-auto w-full border-solid border-2 ">
-                <thead className="bg-gray-50">
-                <tr>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Leave_ID</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Number Of Days</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Reason</th>
+        <div className='w-[90%] mx-auto overflow-x-auto'>
+        <table className="w-full whitespace-no-wrap bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+            <thead className="text-white">
+                <tr className="bg-gray-700 uppercase text-sm leading-normal">
+                    <th scope="col" className="py-3 px-4 text-left">Leave_ID</th>
+                    <th scope="col" className="py-3 px-4 text-left">Number Of Days</th>
+                    <th scope="col" className="py-3 px-4 text-left">Reason</th>
                 </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody className="text-gray-700 text-sm">
                 {leaves.map(leave => (
                     <tr key={leave.Leave_ID}>
-                    <td className="border px-4 py-2">{leave.Leave_ID}</td>
-                    <td className="border px-4 py-2">{leave.Number_of_days}</td>
-                    <td className="border px-4 py-2">{leave.Reason}</td>
+                    <td className="py-3 px-4 border-b border-gray-200">{leave.Leave_ID}</td>
+                    <td className="py-3 px-4 border-b border-gray-200">{leave.Number_of_days}</td>
+                    <td className="py-3 px-4 border-b border-gray-200">{leave.Reason}</td>
                     </tr>
                 ))}
                 </tbody>
