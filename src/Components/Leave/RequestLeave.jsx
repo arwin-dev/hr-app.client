@@ -34,13 +34,12 @@ export const RequestLeave = () => {
                 empID : auth.empID
             }    
 
-            const response = await axios.post(process.env.REACT_APP_API+'leaves/addleaves', leave)
+            await axios.post(process.env.REACT_APP_API+'leaves/addleaves', leave)
 
-            console.log('Training added successfully!', response.data);
             navigate('/timeoff');
         } catch (error) {
             alert('Error adding training');
-            console.error('Error adding training:', error);
+            // console.error('Error adding training:', error);
         }
     };
 
