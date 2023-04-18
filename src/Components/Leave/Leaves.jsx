@@ -61,7 +61,7 @@ export const Leaves = () => {
             }
         <div className='flex items-center justify-between bg-gray-200 px-4 py-3 rounded-t-lg'>
             <h1 className='text-xl font-bold text-gray-800'>Time Off</h1>
-            <button onClick={addLeaves} className='text-red-800 hover:text-red-500 mr-3' >Request Time Off </button>
+            <button onClick={addLeaves} class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-4 rounded-md transition-colors duration-200 ease-in-out">Request Time Off</button>
         </div>
         <div className='w-[90%] mx-auto overflow-x-auto'>
         <table className="w-full whitespace-no-wrap bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">

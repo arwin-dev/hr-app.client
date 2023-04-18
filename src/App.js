@@ -13,6 +13,7 @@ import { Leaves } from './Components/Leave/Leaves';
 import {Jobs} from './Components/Jobs'
 import { RequestLeave } from './Components/Leave/RequestLeave';
 import { Dashboard } from './Components/Dashboard';
+import { CreateTraining } from './Components/Training/CreateTraining';
 
 function App() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
           <Route path='team' element={<RequireAuth> <Team/> </RequireAuth>} />
 
           <Route path='training' element={<RequireAuth> <Training/> </RequireAuth>} />
+          <Route path='training/createTraining' element={<RequireAuth> <CreateTraining/> </RequireAuth>} />
           <Route path='training/addtraining' element={ <RequireAuth> <AddTraining/> </RequireAuth> }/>
 
           <Route path='timeoff' element={<RequireAuth> <Leaves/> </RequireAuth>}/>
