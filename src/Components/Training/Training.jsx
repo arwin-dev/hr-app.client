@@ -53,25 +53,25 @@ export const Training = () => {
             <h1 className='text-xl font-bold text-gray-800'>Training</h1>
             <button onClick={addTraining} className='text-red-800 hover:text-red-500 mr-3' > Add Training </button>
         </div>
-        <div className='w-fit container mx-auto p-6'>
-            <table className="table-auto w-full border-solid border-2 ">
-                <thead className="bg-gray-50">
-                <tr>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Name</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Mode</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Start Date</th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-black uppercase tracking-wider">Completion Date</th>
-                </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                {trainings.map(training => (
-                    <tr key={training.Name}>
-                    <td className="border px-4 py-2">{training.Name}</td>
-                    <td className="border px-4 py-2">{training.Mode}</td>
-                    <td className="border px-4 py-2">{formatDate(training.Start_date)}</td>
-                    <td className="border px-4 py-2">{formatDate(training.Completion_date)}</td>
+        <div className='w-[90%] mx-auto overflow-x-auto'>
+            <table className="w-full whitespace-no-wrap bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                <thead className="text-white">
+                    <tr className="bg-gray-700 uppercase text-sm leading-normal">
+                        <th className="py-3 px-4 text-left">Name</th>
+                        <th className="py-3 px-4 text-left">Mode</th>
+                        <th className="py-3 px-4 text-left">Start Date</th>
+                        <th className="py-3 px-4 text-left">Completion Date</th>
                     </tr>
-                ))}
+                </thead>
+                <tbody className="text-gray-700 text-sm">
+                    {trainings.map(training => (
+                        <tr key={training.Name}>
+                            <td className="py-3 px-4 border-b border-gray-200">{training.Name}</td>
+                            <td className="py-3 px-4 border-b border-gray-200">{training.Mode}</td>
+                            <td className="py-3 px-4 border-b border-gray-200">{formatDate(training.Start_date)}</td>
+                            <td className="py-3 px-4 border-b border-gray-200">{formatDate(training.Completion_date)}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>

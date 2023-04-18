@@ -10,6 +10,7 @@ import {Team} from './Components/Team';
 import AddTraining from './Components/Training/AddTraining';
 import NoMatch from './Components/NoMatch';
 import { Leaves } from './Components/Leave/Leaves';
+import {Jobs} from './Components/Jobs'
 import { RequestLeave } from './Components/Leave/RequestLeave';
 import { Dashboard } from './Components/Dashboard';
 
@@ -32,6 +33,8 @@ function App() {
 
           <Route path='timeoff' element={<RequireAuth> <Leaves/> </RequireAuth>}/>
           <Route path='timeoff/requesttimeoff' element={<RequireAuth> <RequestLeave/> </RequireAuth>}/>
+
+          <Route path="jobs" element={<RequireAuth> <Jobs/> </RequireAuth>}/>
 
           <Route path='about' element={<RequireAuth> <About/> </RequireAuth>}/>
 

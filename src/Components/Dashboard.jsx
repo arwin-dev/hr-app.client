@@ -37,6 +37,13 @@ export const Dashboard = () => {
             </NavLink>
 
             <NavLink
+                to='/jobs'
+                className="flex items-center justify-center w-[180px] px-6 py-4 text-lg font-medium text-gray-900 bg-sky-500 rounded-md shadow-md hover:bg-sky-600"
+            >
+                Jobs
+            </NavLink>
+
+            <NavLink
                 to='/about'
                 className="flex items-center justify-center w-[180px] px-6 py-4 text-lg font-medium text-gray-900 bg-purple-500 rounded-md shadow-md hover:bg-purple-600"
             >
@@ -49,3 +56,5 @@ export const Dashboard = () => {
   )
 }
 
+//benjilee
+//b6k8UqhdJsMz
