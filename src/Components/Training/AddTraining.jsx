@@ -15,7 +15,9 @@ const AddTraining = () => {
 
 
     useEffect(() => {
-        axios.get(process.env.REACT_APP_API+'training')
+        axios.get(process.env.REACT_APP_API+'training',{
+          params: { empID: auth.empID },
+        })
         .then(respone => {
             setTrainingOptions(respone.data.map(Training => ({value:Training.Training_ID, label: Training.Name})))
         })
