@@ -23,7 +23,7 @@ Once the application is running, you can access the following pages:
 * `/dashboard`: The dashboard page, which displays the user's time off requests and training schedule.
 * `/team`: The team page, which displays information about the company's team members.
 * `/training`: The training page, which displays the user's training schedule.
-* `/training/addtraining`: The add training page, which allows the user to add a new training session to their schedule.
+* `/training/addtraining`: The add training page, which allows the user to add a new training session. 
 * `/timeoff`: The time off page, which displays the user's time off requests.
 * `/timeoff/requesttimeoff`: The request time off page, which allows the user to request time off.
 * `/about`: The about page, which displays information about the company.

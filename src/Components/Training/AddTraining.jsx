@@ -38,7 +38,7 @@ const AddTraining = () => {
 
         await axios.post(process.env.REACT_APP_API+'training/add', training);
 
-        //alert('Training added successfully');
+        alert('Training added successfully');
         navigate('/training');
         } catch (error) {
             alert('Error Adding Training');
@@ -83,7 +83,7 @@ const AddTraining = () => {
     </div>
     <div className="mb-4">
       <label htmlFor="training-id" className="block font-semibold text-gray-800 mb-2">
-        Training ID:
+        Training Course:
       </label>
       <select
         id="training-id"
@@ -92,7 +92,7 @@ const AddTraining = () => {
         className="border border-gray-400 rounded-lg px-3 py-2 w-full text-gray-800"
         required
       >
-        <option value="">Select Training ID</option>
+        <option value="">Select Training Course</option>
         {trainingOptions.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}

@@ -56,8 +56,8 @@ export const Training = () => {
             <div className='flex items-center justify-between bg-gray-200 px-4 py-3 rounded-t-lg'>
                 <h1 className='text-xl font-bold text-gray-800'>Training</h1>
                 <div>
-                    {auth.manager && (<button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-4 mr-3 rounded-md transition-colors duration-200 ease-in-out" onClick={createTraining}>Create New Training</button> )}
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-4 rounded-md transition-colors duration-200 ease-in-out" onClick={addTraining}>Add Training</button>
+                    {auth.manager && (<button className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-4 mr-3 rounded-md transition-colors duration-200 ease-in-out" onClick={createTraining}>Create New Training</button> )}
+                    <button className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-4 rounded-md transition-colors duration-200 ease-in-out" onClick={addTraining}>Add Training</button>
                 </div>
             </div>
             <div className='w-[90%] mx-auto overflow-x-auto'>
