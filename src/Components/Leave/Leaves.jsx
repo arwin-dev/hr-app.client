@@ -8,6 +8,7 @@ export const Leaves = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [showPopup, setShowPopup] = useState(false); 
     const [error, setError] = useState(null); 
+    const [PTO, setPto] = useState(0);
     const auth = useAuth();
     const navigate = useNavigate();
 
@@ -26,6 +27,18 @@ export const Leaves = () => {
             }
         };
         fetchData();
+
+        const fetchPto = async () => {
+            try {
+                const response = await axios.get(process.env.REACT_APP_API + 'leaves/getPto', {
+                    params: { empID: auth.empID }
+                });
+                setPto(response.data[0].PTO);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchPto();
     }, [auth.empID]);
 
     if (isLoading) {
@@ -37,7 +50,7 @@ export const Leaves = () => {
     }
 
     const totalDays = leaves.reduce((acc, leave) => acc + leave.Number_of_days, 0);
-    const pto = leaves[0].PTO;
+    const pto = PTO;
 
     const addLeaves = async (e) => {
         if (totalDays < pto) {
