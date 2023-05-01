@@ -1,4 +1,4 @@
-# HR Management React App with ASP.NET Web API Backend - COP 4710 (Database Sesign) Project
+# HR Management React App with ASP.NET Web API Backend - COP 4710 (Database Design) Project
 This is a sample React application that interacts with an ASP.NET Web API backend. The app provides authentication and authorization features, allows users to manage their time off, view their training schedule, and get information about the company and team. The following are the steps to get started with the application.
 
 ## Requirements
